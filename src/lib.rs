@@ -1478,7 +1478,6 @@ impl Config<'_> {
 #[cfg(test)]
 mod tests {
     use can_dbc::{Signal, ValueType};
-    use can_dbc::{ByteOrder, MultiplexIndicator, Signal, ValueType};
 
     use super::*;
 
@@ -1496,23 +1495,6 @@ mod tests {
             unit: String::new(),
             receivers: vec![],
             multiplexer_indicator: Plain,
-        }
-    }
-
-    fn signal(sign: ValueType, signal_size: u32, factor: i64, offset: i64) -> Signal {
-        Signal {
-            name: String::new(),
-            start_bit: 0,
-            size: u64::from(signal_size),
-            byte_order: ByteOrder::LittleEndian,
-            value_type: sign,
-            factor: factor as f64,
-            offset: offset as f64,
-            min: 0.0,
-            max: 0.0,
-            unit: String::new(),
-            receivers: vec![],
-            multiplexer_indicator: MultiplexIndicator::Plain,
         }
     }
 

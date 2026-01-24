@@ -77,7 +77,6 @@ impl ValType {
         }
     }
 
-    #[allow(dead_code)]
     pub fn format_value(self, value: f64) -> String {
         match self {
             Bool => format!("{}", (value - 1.0).abs() < f64::from(f32::EPSILON)),
